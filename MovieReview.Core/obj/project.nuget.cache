@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "Xj72IfJOITdH3tgdAyxvxXDZqxEehg/H+3cSlm897hXePWZmnvUE+f00jS8EJf58nllrIbT84zNL0aQCflYpbw==",
+  "success": true,
+  "projectFilePath": "C:\\projects\\GitHub\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1803",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "You are running the 'restore' operation with an 'HTTP' source, 'http://dmz-14.dmz.org.br:8080/artifactory/api/nuget/v3/ncgp-nuget-local'. Non-HTTPS access will be removed in a future version. Consider migrating to an 'HTTPS' source."
+    }
+  ]
+}
