@@ -1,0 +1,17 @@
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\obj\Debug\net6.0\MovieReview.Database.csproj.AssemblyReference.cache
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\obj\Debug\net6.0\MovieReview.Database.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\obj\Debug\net6.0\MovieReview.Database.AssemblyInfoInputs.cache
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\obj\Debug\net6.0\MovieReview.Database.AssemblyInfo.cs
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\obj\Debug\net6.0\MovieReview.Database.csproj.CoreCompileInputs.cache
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\bin\Debug\net6.0\MovieReview.Database.deps.json
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\bin\Debug\net6.0\MovieReview.Database.runtimeconfig.json
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\bin\Debug\net6.0\MovieReview.Database.dll
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\bin\Debug\net6.0\MovieReview.Database.pdb
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\bin\Debug\net6.0\MovieReview.Core.dll
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\bin\Debug\net6.0\MovieReview.Core.pdb
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\obj\Debug\net6.0\MovieReview.Database.csproj.CopyComplete
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\obj\Debug\net6.0\MovieReview.Database.dll
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\obj\Debug\net6.0\ref\MovieReview.Database.dll
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\obj\Debug\net6.0\MovieReview.Database.pdb
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\obj\Debug\net6.0\MovieReview.Database.genruntimeconfig.cache
+C:\projects\GitHub\MovieReview\MovieReview.DataBase\obj\Debug\net6.0\refint\MovieReview.Database.dll
