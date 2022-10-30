@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "aafJareftjM41zrEy/vdwjU8OH4WypOxmOyKXcwuNYrd6lN2UY9Df3yMyLW2T3MGu/nVdX2zW/pVyGyn09bgnw==",
+  "dgSpecHash": "Rx0qjffkkfEZKjdbH83WxJdnWQq6eyuRzHStr+v8eD4LsoBWMFssDN0jOH9hNZQ9CYz4DN7cTeDlrVzyJ2mn6Q==",
   "success": true,
-  "projectFilePath": "C:\\projects\\GitHub\\MovieReview\\MovieReview.DataBase\\MovieReview.Database.csproj",
+  "projectFilePath": "C:\\projects\\MovieReview\\MovieReview.DataBase\\MovieReview.Database.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\j.edson\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\j.edson\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "CWVMbKR/jgvma+rRNZcbzKihzbyIqBc1jh3rq53nWeygT6A7bRXDmEJODHpSdlmGVjXGK2NVM9IPifxnQ0krKg==",
+  "dgSpecHash": "BcQUyVY0uq3la+ZLi5r6/1LuzOnKXYATsEeNzGzwky37GjyKIgy0GSxEu1HNjj3rQ5mLaS00nOo8PQmQIO+/Mw==",
   "success": true,
-  "projectFilePath": "C:\\projects\\GitHub\\MovieReview\\MovieReview.API\\MovieReview.API.csproj",
+  "projectFilePath": "C:\\projects\\MovieReview\\MovieReview.API\\MovieReview.API.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\j.edson\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\j.edson\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

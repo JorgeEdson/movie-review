@@ -10,3 +10,15 @@ C:\projects\GitHub\MovieReview\MovieReview.Core\obj\Debug\net6.0\ref\MovieReview
 C:\projects\GitHub\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.pdb
 C:\projects\GitHub\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.csproj.AssemblyReference.cache
 C:\projects\GitHub\MovieReview\MovieReview.Core\obj\Debug\net6.0\refint\MovieReview.Core.dll
+C:\projects\MovieReview\MovieReview.Core\bin\Debug\net6.0\MovieReview.Core.deps.json
+C:\projects\MovieReview\MovieReview.Core\bin\Debug\net6.0\MovieReview.Core.dll
+C:\projects\MovieReview\MovieReview.Core\bin\Debug\net6.0\MovieReview.Core.pdb
+C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.csproj.AssemblyReference.cache
+C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.AssemblyInfoInputs.cache
+C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.AssemblyInfo.cs
+C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.csproj.CoreCompileInputs.cache
+C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.dll
+C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\ref\MovieReview.Core.dll
+C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.pdb
+C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\refint\MovieReview.Core.dll

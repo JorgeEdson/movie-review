@@ -15,11 +15,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\projects\\GitHub\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj",
+      "projectUniqueName": "C:\\projects\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj",
       "projectName": "MovieReview.Core",
-      "projectPath": "C:\\projects\\GitHub\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj",
+      "projectPath": "C:\\projects\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj",
       "packagesPath": "C:\\Users\\j.edson\\.nuget\\packages\\",
-      "outputPath": "C:\\projects\\GitHub\\MovieReview\\MovieReview.Core\\obj\\",
+      "outputPath": "C:\\projects\\MovieReview\\MovieReview.Core\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\projects\\GitHub\\MovieReview\\MovieReview.DataBase\\MovieReview.Database.csproj": {}
+    "C:\\projects\\MovieReview\\MovieReview.DataBase\\MovieReview.Database.csproj": {}
   },
   "projects": {
-    "C:\\projects\\GitHub\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj": {
+    "C:\\projects\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\GitHub\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj",
+        "projectUniqueName": "C:\\projects\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj",
         "projectName": "MovieReview.Core",
-        "projectPath": "C:\\projects\\GitHub\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj",
+        "projectPath": "C:\\projects\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj",
         "packagesPath": "C:\\Users\\j.edson\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\GitHub\\MovieReview\\MovieReview.Core\\obj\\",
+        "outputPath": "C:\\projects\\MovieReview\\MovieReview.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -67,14 +67,14 @@
         }
       }
     },
-    "C:\\projects\\GitHub\\MovieReview\\MovieReview.DataBase\\MovieReview.Database.csproj": {
+    "C:\\projects\\MovieReview\\MovieReview.DataBase\\MovieReview.Database.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\projects\\GitHub\\MovieReview\\MovieReview.DataBase\\MovieReview.Database.csproj",
+        "projectUniqueName": "C:\\projects\\MovieReview\\MovieReview.DataBase\\MovieReview.Database.csproj",
         "projectName": "MovieReview.Database",
-        "projectPath": "C:\\projects\\GitHub\\MovieReview\\MovieReview.DataBase\\MovieReview.Database.csproj",
+        "projectPath": "C:\\projects\\MovieReview\\MovieReview.DataBase\\MovieReview.Database.csproj",
         "packagesPath": "C:\\Users\\j.edson\\.nuget\\packages\\",
-        "outputPath": "C:\\projects\\GitHub\\MovieReview\\MovieReview.DataBase\\obj\\",
+        "outputPath": "C:\\projects\\MovieReview\\MovieReview.DataBase\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
@@ -99,8 +99,8 @@
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\projects\\GitHub\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj": {
-                "projectPath": "C:\\projects\\GitHub\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj"
+              "C:\\projects\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj": {
+                "projectPath": "C:\\projects\\MovieReview\\MovieReview.Core\\MovieReview.Core.csproj"
               }
             }
           }

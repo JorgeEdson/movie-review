@@ -5,6 +5,6 @@ namespace MovieReview.Core.Domain.Entities
 {
     public class Actor : Person
     {
-        public List<Title> Titles { get; set; }
+        public virtual List<Title> Titles { get; private set; }
     }
 }

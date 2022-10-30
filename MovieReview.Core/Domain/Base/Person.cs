@@ -6,5 +6,6 @@ namespace MovieReview.Core.Domain.Base
     {
         public string Name { get; set; }
         public DateTime BirthDate { get; set; }
+        
     }
 }
