@@ -18,11 +18,12 @@ namespace MovieReview.Core.Domain.Entities
             Name = name;
             Password = pasword;
             Role = role;
+            Reviews = new List<Review>();
         }
 
-        public Review WriteReviewAboutTitle(Title title ,string description, int note) 
+        public void WriteReviewAboutTitle(Title title ,string description, int note) 
         {
-            var review = new Review();
+            Review review = new();
             
             review.SetUser(this);
             review.SetTitle(title);
@@ -30,8 +31,6 @@ namespace MovieReview.Core.Domain.Entities
             review.SetNote(note);
 
             AddReview(review);
-            
-            return review;
         }
 
         private void AddReview(Review review) 

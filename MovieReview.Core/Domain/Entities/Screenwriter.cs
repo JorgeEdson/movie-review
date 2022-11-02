@@ -6,17 +6,13 @@ namespace MovieReview.Core.Domain.Entities
 {
     public class Screenwriter : Person
     {
-        public virtual List<Title> Titles { get; private set; }
-
         public Screenwriter(string name, DateTime birthDate)
         {
             Name = name;
             BirthDate = birthDate;
+            Titles = new List<Title>();
         }
 
-        public void SetTitles(List<Title> titles) 
-        { 
-            Titles = titles;
-        }
+        
     }
 }
