@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using MovieReview.API.Services.Interfaces;
 using MovieReview.Core.Domain.Entities;
+using MovieReview.Core.Dto;
 using MovieReview.Database.Services.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -104,7 +105,7 @@ namespace MovieReview.API.Controllers
 
         [HttpPost("Login")]
         [AllowAnonymous]
-        public async Task<IActionResult> LoginAsync([FromBody] User model)
+        public async Task<IActionResult> LoginAsync([FromBody] UserDto model)
         {
             try
             {

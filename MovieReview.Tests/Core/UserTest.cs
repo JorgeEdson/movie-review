@@ -12,14 +12,14 @@ namespace MovieReview.Tests.Core
         {
             //arrange
             string name = "User Test";
-            string pasword = "123456";
+            string password = "123456";
             Roles role = Roles.Administrator;
-            User user = new(name, pasword, role);
+            User user = new(name, password, role);
             //action
             //assert
             Assert.NotNull(user);
             Assert.Equal(name, user.Name);
-            Assert.Equal(pasword, user.Password);
+            Assert.Equal(password, user.Password);
             Assert.Equal(role, user.Role);
             Assert.NotNull(user.Reviews);
         }

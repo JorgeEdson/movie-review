@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieReview.Database", "Mov
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieReview.API", "MovieReview.API\MovieReview.API.csproj", "{F8E80AE2-976B-46E8-9DFC-A9BAE8CCCD78}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieReview.Tests", "MovieReview.Tests\MovieReview.Tests.csproj", "{7602F556-7CC5-4BED-97D1-9C1E870A7743}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieReview.Tests", "MovieReview.Tests\MovieReview.Tests.csproj", "{7602F556-7CC5-4BED-97D1-9C1E870A7743}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieReview.WebApp", "MovieReview.WebApp\MovieReview.WebApp.csproj", "{95367E94-1D9D-45BA-8010-5E850D0098B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7602F556-7CC5-4BED-97D1-9C1E870A7743}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7602F556-7CC5-4BED-97D1-9C1E870A7743}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7602F556-7CC5-4BED-97D1-9C1E870A7743}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95367E94-1D9D-45BA-8010-5E850D0098B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95367E94-1D9D-45BA-8010-5E850D0098B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95367E94-1D9D-45BA-8010-5E850D0098B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95367E94-1D9D-45BA-8010-5E850D0098B4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

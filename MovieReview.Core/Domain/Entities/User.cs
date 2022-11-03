@@ -13,10 +13,10 @@ namespace MovieReview.Core.Domain.Entities
         public Roles Role { get; private set; }
         public  virtual List<Review> Reviews { get; private set; }
 
-        public User(string name, string pasword, Roles role) : base()
+        public User(string name, string password, Roles role) : base()
         {
             Name = name;
-            Password = pasword;
+            Password = password;
             Role = role;
             Reviews = new List<Review>();
         }

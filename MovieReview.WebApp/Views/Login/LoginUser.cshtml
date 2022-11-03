@@ -1,0 +1,13 @@
+﻿@using MovieReview.Core.Dto
+@model UserDto
+
+<div class="container">
+    <form>
+        <input asp-for="Name" type="text" />
+        <input asp-for="Password" type="password" />
+        <button type="submit" asp-action="LoginUser" asp-controller="Login">Logar</button>
+    </form>
+    <div class="container"
+        <p></p>
+    </div>
+</div>

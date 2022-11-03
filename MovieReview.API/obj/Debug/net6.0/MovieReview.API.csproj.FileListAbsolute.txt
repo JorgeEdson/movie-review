@@ -117,7 +117,6 @@ C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.Generat
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.AssemblyInfoInputs.cache
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.AssemblyInfo.cs
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.csproj.CoreCompileInputs.cache
-C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.MvcApplicationPartsAssemblyInfo.cs
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.MvcApplicationPartsAssemblyInfo.cache
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\staticwebassets.build.json
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\staticwebassets.development.json
