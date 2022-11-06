@@ -1,12 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using MovieReview.Core.Dto;
 using MovieReview.API.Services.Interfaces;
 using MovieReview.Core.Domain.Entities;
-using MovieReview.Core.Dto;
 using MovieReview.Database.Services.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace MovieReview.API.Controllers
@@ -105,25 +104,18 @@ namespace MovieReview.API.Controllers
 
         [HttpPost("Login")]
         [AllowAnonymous]
-        public async Task<IActionResult> LoginAsync([FromBody] UserDto model)
+        public async Task<string> Login([FromBody]UserDto model)
         {
             try
             {
                 var userResult = await _userService.GetByNameAndPasswordAsync(model.Name, model.Password);
                 if (userResult == null)
-                    return NotFound(new { message = "User Not Found" });
-
-                var token = _tokenService.GenerateToken(userResult);
-
-                Dictionary<string, string> userToken = new Dictionary<string, string>();
-                userToken.Add(userResult.Name, token);
-
-                return Ok(userToken);
-
+                    return "User Not Found";
+                return _tokenService.GenerateToken(userResult); 
             }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+                return "Bad request";
             }
         }
     }

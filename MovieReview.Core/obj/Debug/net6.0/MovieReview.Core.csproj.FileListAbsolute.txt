@@ -19,6 +19,6 @@ C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.Assem
 C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.AssemblyInfo.cs
 C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.csproj.CoreCompileInputs.cache
 C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.dll
-C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\ref\MovieReview.Core.dll
-C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.pdb
 C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\refint\MovieReview.Core.dll
+C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\MovieReview.Core.pdb
+C:\projects\MovieReview\MovieReview.Core\obj\Debug\net6.0\ref\MovieReview.Core.dll

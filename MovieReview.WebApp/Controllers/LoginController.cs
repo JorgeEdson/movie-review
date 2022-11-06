@@ -1,19 +1,18 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MovieReview.Core.Dto;
-using MovieReview.WebApp.Services;
 using MoviewReview.WebApp.Services.Interfaces;
-using Refit;
+using MovieReview.Core.Dto;
 
 namespace MovieReview.WebApp.Controllers
 {
     public class LoginController : Controller
-    {       
-        IMovieReviewApiService _apiClient;
+    {   
+        private readonly IMovieReviewApiService _movieReviewApiService;
 
-        public LoginController()
+        public LoginController(IMovieReviewApiService movieReviewApiService)
         {
-            _apiClient = MovieReviewApiService.GetApiClient();
+            _movieReviewApiService = movieReviewApiService;
         }
+        
         
         public IActionResult LoginUser()
         {
@@ -23,8 +22,17 @@ namespace MovieReview.WebApp.Controllers
         [HttpPost]
         public async Task<IActionResult> LoginUser(UserDto model)
         {
-            var token = _apiClient.LoginAsync(model);
-            return View(token);
+            try
+            {
+                var token = await _movieReviewApiService.LoginAsync(model);
+                
+                return View();
+            }
+            catch (Exception ex) 
+            {
+                throw new Exception(ex.Message);
+            }
+            
         }
     }
 }

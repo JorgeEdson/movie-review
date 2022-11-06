@@ -28,15 +28,15 @@ namespace MovieReviewDataBase
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(connectionString: "Integrated Security=SSPI;" +
-            //                                              "Persist Security Info=False;" +
-            //                                              "Initial Catalog=MovieReviewDB;" +
-            //                                              "Data Source=J-EDSON01");
-
             optionsBuilder.UseSqlServer(connectionString: "Integrated Security=SSPI;" +
                                                           "Persist Security Info=False;" +
                                                           "Initial Catalog=MovieReviewDB;" +
-                                                          "Data Source=ASUSDEV");
-        }        
+                                                          "Data Source=J-EDSON01");
+
+            //optionsBuilder.UseSqlServer(connectionString: "Integrated Security=SSPI;" +
+            //                                              "Persist Security Info=False;" +
+            //                                              "Initial Catalog=MovieReviewDB;" +
+            //                                              "Data Source=ASUSDEV");
+        }
     }
 }

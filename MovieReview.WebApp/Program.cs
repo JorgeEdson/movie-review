@@ -1,9 +1,11 @@
-using MoviewReview.WebApp.Services.Interfaces;
+using MovieReview.WebApp.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddExternalApiClients(builder.Configuration);
 
 var app = builder.Build();
 
