@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
@@ -10,9 +12,12 @@ using MovieReview.Database.Repositories;
 using MovieReview.Database.Repositories.Interfaces;
 using MovieReview.Database.Services;
 using MovieReview.Database.Services.Interfaces;
+using MovieReviewDataBase;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
+
+
 
 builder.Services.AddControllers();
 
@@ -39,8 +44,8 @@ builder.Services.AddAuthentication(x =>
     };
 });
 
+builder.Services.AddDbContext<MovieReviewContext>(options => options.UseSqlServer(builder.Configuration.GetValue<string>("MovieReviewDB")));
 builder.Services.AddSingleton<ITokenService, TokenService>();
-
 builder.Services.AddSingleton<IUserRepository, UserRepository>();
 builder.Services.AddSingleton<IUserService, UserService>();
 

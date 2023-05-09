@@ -11,8 +11,6 @@ namespace MovieReview.Core.Domain.Entities
             Name = name;
             BirthDate = birthDate;
             Titles = new List<Title>();
-        }
-
-        
+        }        
     }
 }

@@ -24,6 +24,23 @@ namespace MovieReview.API.Controllers
             _tokenService = tokenService;
         }
 
+        [HttpPost("Login")]
+        [AllowAnonymous]
+        public async Task<string> Login([FromBody] UserDto model)
+        {
+            try
+            {
+                var userResult = await _userService.GetByNameAndPasswordAsync(model.Name, model.Password);
+                if (userResult == null)
+                    return "User Not Found";
+                return _tokenService.GenerateToken(userResult);
+            }
+            catch (Exception ex)
+            {
+                return "Bad request";
+            }
+        }
+
         // GET: api/<UserController>
         [HttpGet("GetAll")]
         [Authorize]
@@ -102,21 +119,6 @@ namespace MovieReview.API.Controllers
             }
         }
 
-        [HttpPost("Login")]
-        [AllowAnonymous]
-        public async Task<string> Login([FromBody]UserDto model)
-        {
-            try
-            {
-                var userResult = await _userService.GetByNameAndPasswordAsync(model.Name, model.Password);
-                if (userResult == null)
-                    return "User Not Found";
-                return _tokenService.GenerateToken(userResult); 
-            }
-            catch (Exception ex)
-            {
-                return "Bad request";
-            }
-        }
+        
     }
 }
