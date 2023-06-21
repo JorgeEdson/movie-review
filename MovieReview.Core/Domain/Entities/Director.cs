@@ -6,11 +6,17 @@ namespace MovieReview.Core.Domain.Entities
 {
     public class Director : Person
     {
-        public Director(string name, DateTime birthDate)
+        public virtual List<Title>? Titles { get; private set; }
+        public Director(string paramName, DateTime paramBirthDate)
         {
-            Name = name;
-            BirthDate = birthDate;
-            Titles = new List<Title>();
-        }        
+            Name = paramName;
+            BirthDate = paramBirthDate;
+            Titles = new();
+        }
+
+        public Director()
+        { }
+
+        public void SetTitles(List<Title> titles) => Titles = titles;
     }
 }

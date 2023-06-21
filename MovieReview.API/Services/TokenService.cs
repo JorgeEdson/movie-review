@@ -1,29 +1,26 @@
 ﻿using Microsoft.IdentityModel.Tokens;
-using MovieReview.API.Services.Interfaces;
+using MovieReview.API.Extensions;
 using MovieReview.Core.Domain.Entities;
 using System;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Text;
 
 namespace MovieReview.API.Services
 {
-    public class TokenService : ITokenService
+    public class TokenService
     {
-        public string GenerateToken(User user)
-        {
+        public string GenerateToken(Reviwer paramReviwer) 
+        { 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(Settings.SecretKey);
+            var key = Encoding.ASCII.GetBytes(JWT.JwtKey);
+            var claims = paramReviwer.GetClaims();
             var tokenDescriptor = new SecurityTokenDescriptor
             {
-                Subject = new ClaimsIdentity(new Claim[]
-                {
-                    new Claim(ClaimTypes.Name, user.Name),
-                    new Claim(ClaimTypes.Role, user.Role.ToString())
-                }),
+                Subject = new ClaimsIdentity(claims),
                 Expires = DateTime.UtcNow.AddHours(1),
-                SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
+                SigningCredentials = new SigningCredentials(
+                    new SymmetricSecurityKey(key),SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
             return tokenHandler.WriteToken(token);

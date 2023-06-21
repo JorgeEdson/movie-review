@@ -24,20 +24,18 @@ namespace MovieReview.Database.Migrations
 
             modelBuilder.Entity("MovieReview.Core.Domain.Entities.Actor", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("BirthDate");
 
-                    b.Property<DateTime>("CreationDate")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2")
-                        .HasColumnName("CreationDate");
+                        .HasColumnName("CreatedAt");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -45,50 +43,59 @@ namespace MovieReview.Database.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("Name");
 
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatedBy");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Actors", (string)null);
                 });
 
             modelBuilder.Entity("MovieReview.Core.Domain.Entities.ActorTitle", b =>
                 {
-                    b.Property<int>("IdActor")
-                        .HasColumnType("int")
+                    b.Property<Guid>("ActorId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("IdActor");
 
-                    b.Property<int>("IdTitle")
-                        .HasColumnType("int")
+                    b.Property<Guid>("TitleId")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("IdTitle");
 
-                    b.Property<DateTime>("CreationDate")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("Id")
-                        .HasColumnType("int");
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("IdActor", "IdTitle");
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier");
 
-                    b.HasIndex("IdTitle");
+                    b.HasKey("ActorId", "TitleId");
+
+                    b.HasIndex("TitleId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("ActorsTitles", (string)null);
                 });
 
             modelBuilder.Entity("MovieReview.Core.Domain.Entities.Director", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("BirthDate");
 
-                    b.Property<DateTime>("CreationDate")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2")
-                        .HasColumnName("CreationDate");
+                        .HasColumnName("CreatedAt");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -96,23 +103,27 @@ namespace MovieReview.Database.Migrations
                         .HasColumnType("nvarchar(100)")
                         .HasColumnName("Name");
 
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatedBy");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Directors", (string)null);
                 });
 
             modelBuilder.Entity("MovieReview.Core.Domain.Entities.Review", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreationDate")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2")
-                        .HasColumnName("CreationDate");
+                        .HasColumnName("CreatedAt");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -120,67 +131,42 @@ namespace MovieReview.Database.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("Description");
 
-                    b.Property<int>("IdTitle")
-                        .HasColumnType("int")
-                        .HasColumnName("IdTitle");
-
-                    b.Property<int>("IdUser")
-                        .HasColumnType("int")
-                        .HasColumnName("IdUser");
-
                     b.Property<int>("Note")
                         .HasColumnType("int")
                         .HasColumnName("Note");
 
+                    b.Property<Guid>("TitleId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("IdTitle");
+
+                    b.Property<Guid?>("UserId")
+                        .IsRequired()
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("IdUser");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("IdTitle");
+                    b.HasIndex("TitleId");
 
-                    b.HasIndex("IdUser");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Reviews", (string)null);
                 });
 
-            modelBuilder.Entity("MovieReview.Core.Domain.Entities.Screenwriter", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("Id");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("BirthDate")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("BirthDate");
-
-                    b.Property<DateTime>("CreationDate")
-                        .HasColumnType("datetime2")
-                        .HasColumnName("CreationDate");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("Name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Screenwriters", (string)null);
-                });
-
             modelBuilder.Entity("MovieReview.Core.Domain.Entities.Title", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreationDate")
+                    b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2")
-                        .HasColumnName("CreationDate");
+                        .HasColumnName("CreatedAt");
+
+                    b.Property<Guid>("DirectorId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("IdDirector");
 
                     b.Property<int>("Duration")
                         .HasColumnType("int")
@@ -189,14 +175,6 @@ namespace MovieReview.Database.Migrations
                     b.Property<int>("Genre")
                         .HasColumnType("int")
                         .HasColumnName("Genre");
-
-                    b.Property<int>("IdDirector")
-                        .HasColumnType("int")
-                        .HasColumnName("IdDirector");
-
-                    b.Property<int>("IdScreenwriter")
-                        .HasColumnType("int")
-                        .HasColumnName("IdScreenwriter");
 
                     b.Property<string>("Synopsis")
                         .IsRequired()
@@ -214,27 +192,42 @@ namespace MovieReview.Database.Migrations
                         .HasColumnType("int")
                         .HasColumnName("TypeMovie");
 
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatedBy");
+
                     b.HasKey("Id");
 
-                    b.HasIndex("IdDirector");
+                    b.HasIndex("DirectorId");
 
-                    b.HasIndex("IdScreenwriter");
+                    b.HasIndex("UserId");
 
                     b.ToTable("Titles", (string)null);
                 });
 
             modelBuilder.Entity("MovieReview.Core.Domain.Entities.User", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
+                        .HasColumnType("uniqueidentifier")
                         .HasColumnName("Id");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<DateTime>("CreationDate")
+                    b.Property<DateTime>("BirthDate")
                         .HasColumnType("datetime2")
-                        .HasColumnName("CreationDate");
+                        .HasColumnName("BirthDate");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("CreatedAt");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("Email");
+
+                    b.Property<bool>("IsAdministrator")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsAdministrator");
 
                     b.Property<string>("Name")
                         .IsRequired()
@@ -244,49 +237,74 @@ namespace MovieReview.Database.Migrations
 
                     b.Property<string>("Password")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
+                        .HasColumnType("nvarchar(max)")
                         .HasColumnName("Password");
 
-                    b.Property<int>("Role")
-                        .HasColumnType("int")
-                        .HasColumnName("Role");
+                    b.Property<Guid?>("UserId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("CreatedBy");
 
                     b.HasKey("Id");
 
+                    b.HasIndex("UserId");
+
                     b.ToTable("Users", (string)null);
+                });
+
+            modelBuilder.Entity("MovieReview.Core.Domain.Entities.Actor", b =>
+                {
+                    b.HasOne("MovieReview.Core.Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("MovieReview.Core.Domain.Entities.ActorTitle", b =>
                 {
                     b.HasOne("MovieReview.Core.Domain.Entities.Actor", "Actor")
                         .WithMany()
-                        .HasForeignKey("IdActor")
+                        .HasForeignKey("ActorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("MovieReview.Core.Domain.Entities.Title", "Title")
                         .WithMany()
-                        .HasForeignKey("IdTitle")
+                        .HasForeignKey("TitleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.HasOne("MovieReview.Core.Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Actor");
 
                     b.Navigation("Title");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MovieReview.Core.Domain.Entities.Director", b =>
+                {
+                    b.HasOne("MovieReview.Core.Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("MovieReview.Core.Domain.Entities.Review", b =>
                 {
                     b.HasOne("MovieReview.Core.Domain.Entities.Title", "Title")
                         .WithMany("Reviews")
-                        .HasForeignKey("IdTitle")
+                        .HasForeignKey("TitleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("MovieReview.Core.Domain.Entities.User", "User")
                         .WithMany("Reviews")
-                        .HasForeignKey("IdUser")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -299,27 +317,29 @@ namespace MovieReview.Database.Migrations
                 {
                     b.HasOne("MovieReview.Core.Domain.Entities.Director", "Director")
                         .WithMany("Titles")
-                        .HasForeignKey("IdDirector")
+                        .HasForeignKey("DirectorId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MovieReview.Core.Domain.Entities.Screenwriter", "Screenwriter")
-                        .WithMany("Titles")
-                        .HasForeignKey("IdScreenwriter")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.HasOne("MovieReview.Core.Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Director");
 
-                    b.Navigation("Screenwriter");
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("MovieReview.Core.Domain.Entities.User", b =>
+                {
+                    b.HasOne("MovieReview.Core.Domain.Entities.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("MovieReview.Core.Domain.Entities.Director", b =>
-                {
-                    b.Navigation("Titles");
-                });
-
-            modelBuilder.Entity("MovieReview.Core.Domain.Entities.Screenwriter", b =>
                 {
                     b.Navigation("Titles");
                 });

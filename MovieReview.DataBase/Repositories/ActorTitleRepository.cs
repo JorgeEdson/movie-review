@@ -5,7 +5,7 @@ using MovieReview.Core.Domain.Entities;
 
 namespace MovieReview.Database.Repositories
 {
-    public class ActorTitleRepository : GenericRepository<ActorTitle>, IActorTitleRepository
+    public class ActorTitleRepository : BaseRepository<ActorTitle>, IActorTitleRepository
     {
     }
 }

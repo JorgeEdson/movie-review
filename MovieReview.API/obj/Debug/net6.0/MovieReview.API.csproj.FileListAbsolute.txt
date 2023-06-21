@@ -63,10 +63,17 @@ C:\projects\GitHub\MovieReview\MovieReview.API\obj\Debug\net6.0\ref\MovieReview.
 C:\projects\GitHub\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.pdb
 C:\projects\GitHub\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.genruntimeconfig.cache
 C:\projects\GitHub\MovieReview\MovieReview.API\obj\Debug\net6.0\refint\MovieReview.API.dll
-C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.exe
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\appsettings.Development.json
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\appsettings.json
+C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.exe
+C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.deps.json
+C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.runtimeconfig.json
+C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.dll
+C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.pdb
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
@@ -74,6 +81,8 @@ C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.EntityFramewo
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.Identity.Client.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
@@ -122,9 +131,5 @@ C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.csproj.
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.dll
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\refint\MovieReview.API.dll
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.pdb
-C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.deps.json
-C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.runtimeconfig.json
-C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.dll
-C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.pdb
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.genruntimeconfig.cache
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\ref\MovieReview.API.dll

@@ -3,7 +3,7 @@ using MovieReview.Core.Domain.Entities;
 
 namespace MovieReview.Database.Repositories.Interfaces
 {
-    public interface IReviewRepository : IGenericRepository<Review>
+    public interface IReviewRepository : IBaseRepository<Review>
     {
     }
 }

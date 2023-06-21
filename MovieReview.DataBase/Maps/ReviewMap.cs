@@ -17,11 +17,11 @@ namespace MovieReview.Core.Database.Maps
 
             builder.Property(x => x.Note).HasColumnName("Note").IsRequired();
             builder.Property(x => x.Description).HasColumnName("Description").HasMaxLength(int.MaxValue).IsRequired();
-            builder.Property(x => x.IdUser).HasColumnName("IdUser").IsRequired();
-            builder.Property(x => x.IdTitle).HasColumnName("IdTitle").IsRequired();
+            builder.Property(x => x.UserId).HasColumnName("IdUser").IsRequired();
+            builder.Property(x => x.TitleId).HasColumnName("IdTitle").IsRequired();
 
-            builder.HasOne(x => x.User).WithMany(x => x.Reviews).HasForeignKey(x => x.IdUser);
-            builder.HasOne(x => x.Title).WithMany(x => x.Reviews).HasForeignKey(x => x.IdTitle);
+            builder.HasOne(x => x.User).WithMany(x => x.Reviews).HasForeignKey(x => x.UserId);
+            builder.HasOne(x => x.Title).WithMany(x => x.Reviews).HasForeignKey(x => x.TitleId);
             
         }
     }

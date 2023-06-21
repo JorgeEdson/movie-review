@@ -6,11 +6,19 @@ namespace MovieReview.Core.Domain.Entities
 {
     public class Actor : Person
     {
+        public List<Title>? Titles { get; protected set; }
+        
         public Actor(string name, DateTime birthDate)
         {
             Name = name;
             BirthDate = birthDate;
-            Titles = new List<Title>();            
+            Titles = new();
         }
+
+        public Actor()
+        {}
+
+        public void SetTitles(List<Title> titles) => Titles = titles;
+        
     }
 }

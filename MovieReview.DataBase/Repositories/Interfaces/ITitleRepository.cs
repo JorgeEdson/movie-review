@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MovieReview.Database.Repositories.Interfaces
 {
-    public interface ITitleRepository : IGenericRepository<Title>
+    public interface ITitleRepository : IBaseRepository<Title>
     {
     }
 }

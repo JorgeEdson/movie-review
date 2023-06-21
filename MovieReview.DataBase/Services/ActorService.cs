@@ -6,7 +6,7 @@ using MovieReview.Database.Services.Interfaces;
 
 namespace MovieReview.Database.Services
 {
-    public class ActorService : GenericService<Actor>, IActorService
+    public class ActorService : BaseService<Actor>, IActorService
     {
         private readonly IActorRepository _repository;
         public ActorService(IActorRepository repository) : base(repository)

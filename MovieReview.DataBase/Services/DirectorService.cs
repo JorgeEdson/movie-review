@@ -5,7 +5,7 @@ using MovieReview.Database.Services.Interfaces;
 
 namespace MovieReview.Database.Services
 {
-    public class DirectorService : GenericService<Director>, IDirectorService
+    public class DirectorService : BaseService<Director>, IDirectorService
     {
         private readonly IDirectorRepository _repository;
         public DirectorService(IDirectorRepository repository) : base(repository)

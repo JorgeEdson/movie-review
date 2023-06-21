@@ -4,7 +4,7 @@ using MovieReview.Core.Domain.Base;
 
 namespace MovieReview.Database.Maps.Base
 {
-    public class EntityMap<T> : IEntityTypeConfiguration<T> where T : Entity
+    public class EntityMap<T> : IEntityTypeConfiguration<T> where T : BaseEntity
     {
         private readonly string _tableName;
 
@@ -22,7 +22,10 @@ namespace MovieReview.Database.Maps.Base
 
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Id).HasColumnName("Id").ValueGeneratedOnAdd();
-            builder.Property(x => x.CreationDate).HasColumnName("CreationDate").IsRequired();
+            builder.Property(x => x.CreatedAt).HasColumnName("CreatedAt").IsRequired();
+            builder.Property(x => x.UserId).HasColumnName("CreatedBy");
+
+            builder.HasOne(x => x.User).WithMany().HasForeignKey(x => x.UserId);
         }
     }
 }

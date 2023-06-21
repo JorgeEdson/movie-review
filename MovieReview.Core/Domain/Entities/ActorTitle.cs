@@ -1,12 +1,16 @@
 ﻿using MovieReview.Core.Domain.Base;
+using System;
 
 namespace MovieReview.Core.Domain.Entities
 {
-    public class ActorTitle : Entity
+    public class ActorTitle : BaseEntity
     {
-        public int IdTitle { get; set; }
+        public Guid TitleId { get; set; }
         public virtual Title Title { get; set; }
-        public int IdActor { get; set; }
+        public Guid ActorId { get; set; }
         public virtual Actor Actor { get; set; }
+
+        public ActorTitle()
+        { }
     }
 }

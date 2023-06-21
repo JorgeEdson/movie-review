@@ -1,21 +1,30 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MovieReview.Core.Domain.Entities;
 using MovieReview.Database.Repositories.Base;
 using MovieReview.Database.Repositories.Interfaces;
-using MovieReview.Core.Domain.Entities;
-using System.Threading.Tasks;
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace MovieReview.Database.Repositories
 {
-    public class UserRepository : GenericRepository<User>, IUserRepository
+    public class UserRepository : BaseRepository<User>, IUserRepository
     {
-        public UserRepository() : base()
+        public Task<List<User>> GetAllUsersAdm()
         {
+            return _dbSet.Where(u => u.IsAdministrator).ToListAsync();
         }
 
-        public async Task<User> GetByNameAndPasswordAsync(string name, string password)
+        public Task<User> GetByEmailAndPasswordAsync(string paramEmail, string paramPassword)
         {
-            return await _dbSet.Where(x => x.Name.Equals(name) && x.Password.Equals(password)).FirstOrDefaultAsync();
+            return _dbSet.Where(u => u.Email.Equals(paramEmail) && u.Password.Equals(paramPassword)).FirstOrDefaultAsync();
+        }
+
+        public Task<User> GetByEmailAsync(string paramEmail)
+        {
+            return _dbSet.Where(u => u.Email.Equals(paramEmail)).FirstOrDefaultAsync();
         }
     }
 }
