@@ -4,27 +4,22 @@ using MovieReview.Core.Domain.Entities;
 using MovieReview.Database.Services.Interfaces.Base;
 using System.Threading.Tasks;
 using System.Collections.Generic;
+using System;
 
 namespace MovieReview.Database.Services.Base
 {
     public class BaseService<T> : IBaseService<T> where T : BaseEntity
     {
-        private readonly IBaseRepository<T> _repository;
-        private IBaseRepository<Review> repository;
+        private readonly IBaseRepository<T> _repository;        
 
         public BaseService(IBaseRepository<T> repository)
         {
             _repository = repository;
-        }
+        }        
 
-        public BaseService(IBaseRepository<Review> repository)
+        public async virtual Task CreateAsync(T paramObj)
         {
-            this.repository = repository;
-        }
-
-        public async Task AddAsync(T obj)
-        {
-            await _repository.AddAsync(obj);
+            await _repository.CreateAsync(paramObj);
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()
@@ -32,29 +27,24 @@ namespace MovieReview.Database.Services.Base
             return await _repository.GetAllAsync();
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<T> GetByIdAsync(Guid paramId)
         {
-            return await _repository.GetByIdAsync(id);
+            return await _repository.GetByIdAsync(paramId);
         }
 
-        public async Task UpdateAsync(T obj)
+        public async Task UpdateAsync(T paramObj)
         {
-            await _repository.UpdateAsync(obj);
+            await _repository.UpdateAsync(paramObj);
         }
 
-        public async Task RemoveAsync(T obj)
+        public async Task DeleteAsync(T paramObj)
         {
-            await _repository.RemoveAsync(obj);
+            await _repository.DeleteAsync(paramObj);
         }
 
-        public async Task DeleteByIdAsync(int id)
+        public async Task DeleteByIdAsync(Guid paramId)
         {
-            await _repository.RemoveByIdAsync(id);
-        }
-
-        public void Dispose()
-        {
-            _repository.Dispose();
+            await _repository.DeleteByIdAsync(paramId);
         }
     }
 }

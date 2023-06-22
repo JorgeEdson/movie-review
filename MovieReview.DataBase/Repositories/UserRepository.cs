@@ -12,19 +12,19 @@ namespace MovieReview.Database.Repositories
 {
     public class UserRepository : BaseRepository<User>, IUserRepository
     {
-        public Task<List<User>> GetAllUsersAdm()
+        public async Task<List<User>> GetAllUsersAdmAsync()
         {
-            return _dbSet.Where(u => u.IsAdministrator).ToListAsync();
+            return await _dbSet.Where(u => u.IsAdministrator).ToListAsync();
         }
 
-        public Task<User> GetByEmailAndPasswordAsync(string paramEmail, string paramPassword)
+        public async Task<User> GetByEmailAndPasswordAsync(string paramEmail, string paramPassword)
         {
-            return _dbSet.Where(u => u.Email.Equals(paramEmail) && u.Password.Equals(paramPassword)).FirstOrDefaultAsync();
+            return await _dbSet.Where(u => u.Email.Equals(paramEmail) && u.Password.Equals(paramPassword)).FirstOrDefaultAsync();
         }
 
-        public Task<User> GetByEmailAsync(string paramEmail)
+        public async Task<User> GetByEmailAsync(string paramEmail)
         {
-            return _dbSet.Where(u => u.Email.Equals(paramEmail)).FirstOrDefaultAsync();
+            return await _dbSet.Where(u => u.Email.Equals(paramEmail)).FirstOrDefaultAsync();
         }
     }
 }

@@ -7,9 +7,7 @@ namespace MovieReview.Core.Domain.Entities
     public class Review : BaseEntity
     {
         public int Note { get; private set; }
-        public string Description { get; private set; }
-        public Guid UserId { get; private set; }
-        public User User { get; private set; }
+        public string Description { get; private set; }        
         public Guid TitleId { get; private set; }
         public virtual Title Title { get; private set; }
 

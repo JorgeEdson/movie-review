@@ -13,9 +13,9 @@ namespace MovieReview.Core.Domain.Entities
         public int Duration { get; private set; }
         public string Synopsis { get; private set; }        
         public Guid DirectorId { get; private set; }
-        public virtual Director Director { get; private set; }
-        public virtual List<Review> Reviews { get; private set; }
-        public virtual List<Actor> Actors { get; private set; }
+        public  Director Director { get; private set; }
+        public  List<Review>? Reviews { get; private set; }
+        public  List<Actor> Actors { get; private set; }
 
         public Title()
         {}

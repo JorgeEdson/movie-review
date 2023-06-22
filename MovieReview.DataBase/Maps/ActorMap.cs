@@ -5,7 +5,7 @@ using MovieReview.Core.Domain.Entities;
 
 namespace MovieReview.Database.Maps
 {
-    public  class ActorMap : EntityMap<Actor>
+    public  class ActorMap : BaseEntityMap<Actor>
     {
         public ActorMap() : base("Actors")
         {

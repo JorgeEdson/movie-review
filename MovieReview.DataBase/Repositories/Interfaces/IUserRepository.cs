@@ -12,6 +12,6 @@ namespace MovieReview.Database.Repositories.Interfaces
     {
         Task<User> GetByEmailAsync(string paramEmail);
         Task<User> GetByEmailAndPasswordAsync(string paramEmail, string paramPassword);
-        Task<List<User>> GetAllUsersAdm();
+        Task<List<User>> GetAllUsersAdmAsync();
     }
 }

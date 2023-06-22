@@ -10,10 +10,11 @@ using MovieReview.Database.Repositories;
 using MovieReview.Database.Services.Interfaces;
 using MovieReview.Database.Services;
 using System.Text;
+using MovieReview.API.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var key = Encoding.ASCII.GetBytes(JWT.JwtKey);
+var key = Encoding.ASCII.GetBytes(Configuration.JwtKey);
 builder.Services.AddAuthentication(x =>
 {
     x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

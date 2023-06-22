@@ -6,7 +6,7 @@ using MovieReview.Database.Maps.Base;
 
 namespace MovieReview.Database.Maps
 {
-    public class UserMap : EntityMap<User>
+    public class UserMap : BaseEntityMap<User>
     {
         public UserMap() :base("Users")
         {}

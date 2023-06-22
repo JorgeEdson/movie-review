@@ -10,11 +10,11 @@ namespace MovieReview.API.Services
 {
     public class TokenService
     {
-        public string GenerateToken(Reviwer paramReviwer) 
+        public string GenerateToken(User paramUser) 
         { 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(JWT.JwtKey);
-            var claims = paramReviwer.GetClaims();
+            var key = Encoding.ASCII.GetBytes(Configuration.JwtKey);
+            var claims = paramUser.GetClaims();
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),

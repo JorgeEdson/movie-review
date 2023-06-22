@@ -56,24 +56,27 @@ namespace MovieReview.Database.Migrations
 
             modelBuilder.Entity("MovieReview.Core.Domain.Entities.ActorTitle", b =>
                 {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<Guid>("ActorId")
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("IdActor");
-
-                    b.Property<Guid>("TitleId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("IdTitle");
+                        .HasColumnName("ActorId");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<Guid>("TitleId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("TitleId");
 
                     b.Property<Guid?>("UserId")
                         .HasColumnType("uniqueidentifier");
 
-                    b.HasKey("ActorId", "TitleId");
+                    b.HasKey("Id");
+
+                    b.HasIndex("ActorId");
 
                     b.HasIndex("TitleId");
 
@@ -137,12 +140,12 @@ namespace MovieReview.Database.Migrations
 
                     b.Property<Guid>("TitleId")
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("IdTitle");
+                        .HasColumnName("TitleId");
 
                     b.Property<Guid?>("UserId")
                         .IsRequired()
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("IdUser");
+                        .HasColumnName("UserId");
 
                     b.HasKey("Id");
 
@@ -166,7 +169,7 @@ namespace MovieReview.Database.Migrations
 
                     b.Property<Guid>("DirectorId")
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("IdDirector");
+                        .HasColumnName("DirectorId");
 
                     b.Property<int>("Duration")
                         .HasColumnType("int")

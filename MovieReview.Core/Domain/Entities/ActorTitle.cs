@@ -10,6 +10,12 @@ namespace MovieReview.Core.Domain.Entities
         public Guid ActorId { get; set; }
         public virtual Actor Actor { get; set; }
 
+        public ActorTitle(Guid paramTitleId, Guid paramActorId)
+        {
+            TitleId = paramTitleId;
+            ActorId = paramActorId;
+        }
+
         public ActorTitle()
         { }
     }

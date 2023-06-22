@@ -5,7 +5,7 @@ using MovieReview.Core.Domain.Entities;
 
 namespace MovieReview.Core.Database.Maps
 {
-    public class ReviewMap : EntityMap<Review>
+    public class ReviewMap : BaseEntityMap<Review>
     {
         public ReviewMap() : base("Reviews")
         {
@@ -17,8 +17,8 @@ namespace MovieReview.Core.Database.Maps
 
             builder.Property(x => x.Note).HasColumnName("Note").IsRequired();
             builder.Property(x => x.Description).HasColumnName("Description").HasMaxLength(int.MaxValue).IsRequired();
-            builder.Property(x => x.UserId).HasColumnName("IdUser").IsRequired();
-            builder.Property(x => x.TitleId).HasColumnName("IdTitle").IsRequired();
+            builder.Property(x => x.UserId).HasColumnName("UserId").IsRequired();
+            builder.Property(x => x.TitleId).HasColumnName("TitleId").IsRequired();
 
             builder.HasOne(x => x.User).WithMany(x => x.Reviews).HasForeignKey(x => x.UserId);
             builder.HasOne(x => x.Title).WithMany(x => x.Reviews).HasForeignKey(x => x.TitleId);

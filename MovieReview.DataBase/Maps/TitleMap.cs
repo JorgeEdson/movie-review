@@ -5,7 +5,7 @@ using MovieReview.Core.Domain.Entities;
 
 namespace MovieReview.Core.Database.Maps
 {
-    public class TitleMap : EntityMap<Title>
+    public class TitleMap : BaseEntityMap<Title>
     {
         public TitleMap() : base("Titles")
         {
@@ -18,7 +18,7 @@ namespace MovieReview.Core.Database.Maps
             builder.Property(x => x.TypeMovie).HasColumnName("TypeMovie").IsRequired();
             builder.Property(x => x.Genre).HasColumnName("Genre").IsRequired();
             builder.Property(x => x.TitleMovie).HasColumnName("TitleMovie").HasMaxLength(50).IsRequired();
-            builder.Property(x => x.DirectorId).HasColumnName("IdDirector").IsRequired();
+            builder.Property(x => x.DirectorId).HasColumnName("DirectorId").IsRequired();
             
             builder.Property(x => x.Duration).HasColumnName("Duration").IsRequired();
             builder.Property(x => x.Synopsis).HasColumnName("Synopsis").HasMaxLength(int.MaxValue).IsRequired();
@@ -33,10 +33,10 @@ namespace MovieReview.Core.Database.Maps
                 { 
                     x.ToTable("ActorsTitles");
 
-                    x.HasKey(f => new { f.ActorId,f.TitleId }); 
+                    x.HasKey(f => new { f.Id }); 
 
-                    x.Property(x => x.ActorId).HasColumnName("IdActor").IsRequired();
-                    x.Property(x => x.TitleId).HasColumnName("IdTitle").IsRequired();
+                    x.Property(x => x.ActorId).HasColumnName("ActorId").IsRequired();
+                    x.Property(x => x.TitleId).HasColumnName("TitleId").IsRequired();
                 });
         }
     }

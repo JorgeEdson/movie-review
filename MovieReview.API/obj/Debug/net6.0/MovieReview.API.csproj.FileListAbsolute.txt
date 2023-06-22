@@ -63,6 +63,13 @@ C:\projects\GitHub\MovieReview\MovieReview.API\obj\Debug\net6.0\ref\MovieReview.
 C:\projects\GitHub\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.pdb
 C:\projects\GitHub\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.genruntimeconfig.cache
 C:\projects\GitHub\MovieReview\MovieReview.API\obj\Debug\net6.0\refint\MovieReview.API.dll
+C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.csproj.AssemblyReference.cache
+C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.AssemblyInfoInputs.cache
+C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.AssemblyInfo.cs
+C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.csproj.CoreCompileInputs.cache
+C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.MvcApplicationPartsAssemblyInfo.cs
+C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.MvcApplicationPartsAssemblyInfo.cache
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\appsettings.Development.json
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\appsettings.json
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.exe
@@ -70,6 +77,8 @@ C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.deps.js
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.runtimeconfig.json
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.API.pdb
+C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\AutoMapper.dll
+C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
@@ -117,13 +126,6 @@ C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.Core.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.Database.dll
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.Core.pdb
 C:\projects\MovieReview\MovieReview.API\bin\Debug\net6.0\MovieReview.Database.pdb
-C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.csproj.AssemblyReference.cache
-C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.GeneratedMSBuildEditorConfig.editorconfig
-C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.AssemblyInfoInputs.cache
-C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.AssemblyInfo.cs
-C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.csproj.CoreCompileInputs.cache
-C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.MvcApplicationPartsAssemblyInfo.cs
-C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\MovieReview.API.MvcApplicationPartsAssemblyInfo.cache
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\staticwebassets.build.json
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\staticwebassets.development.json
 C:\projects\MovieReview\MovieReview.API\obj\Debug\net6.0\scopedcss\bundle\MovieReview.API.styles.css

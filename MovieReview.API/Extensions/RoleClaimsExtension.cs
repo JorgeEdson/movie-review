@@ -7,15 +7,16 @@ namespace MovieReview.API.Extensions
 {
     public static class RoleClaimsExtension
     {
-        public static IEnumerable<Claim> GetClaims(this Reviwer paramReviwer) 
+        public static IEnumerable<Claim> GetClaims(this User paramUser) 
         {
             List<Claim> result;
-            if (paramReviwer.ISADMINISTRATOR == 1)
+            if (paramUser.IsAdministrator)
             {
                 result = new List<Claim>
                 {
-                    new(ClaimTypes.NameIdentifier, Convert.ToString(paramReviwer.ID)),
-                    new(ClaimTypes.Name, paramReviwer.NAME),
+                    new(ClaimTypes.NameIdentifier, Convert.ToString(paramUser.Id)),
+                    new(ClaimTypes.Name, paramUser.Name),
+                    new(ClaimTypes.Email, paramUser.Email),
                     new(ClaimTypes.Role, "Admin")                   
                 };
             }
@@ -23,9 +24,10 @@ namespace MovieReview.API.Extensions
             {
                 result = new List<Claim>
                 {
-                    new(ClaimTypes.NameIdentifier, Convert.ToString(paramReviwer.ID)),
-                    new(ClaimTypes.Name, paramReviwer.NAME),
-                    new(ClaimTypes.Role, "Reviwer")
+                    new(ClaimTypes.NameIdentifier, Convert.ToString(paramUser.Id)),
+                    new(ClaimTypes.Name, paramUser.Name),
+                    new(ClaimTypes.Email, paramUser.Email),
+                    new(ClaimTypes.Role, "Common")
                 };
             }
 

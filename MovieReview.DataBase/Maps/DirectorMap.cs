@@ -5,7 +5,7 @@ using MovieReview.Core.Domain.Entities;
 
 namespace MovieReview.Core.Database.Maps
 {
-    public  class DirectorMap : EntityMap<Director>
+    public  class DirectorMap : BaseEntityMap<Director>
     {
         public DirectorMap() : base("Directors")
         {

@@ -27,7 +27,7 @@ namespace MovieReview.Database.Repositories.Base
         public async virtual Task CreateAsync(T paramObj)
         {
             _dbSet.Add(paramObj);
-            await _context.SaveChangesAsync();
+            await _context.SaveChangesAsync();            
         }
 
         public async virtual Task<List<T>> GetAllAsync()
