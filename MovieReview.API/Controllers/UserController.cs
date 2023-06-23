@@ -48,14 +48,18 @@ namespace MovieReview.API.Controllers
         }
 
         [HttpPost("Register")]
-        public async Task<IActionResult> Register([FromBody] RegisterRequestDto paramRegisterRequestDto)
+        public async Task<IActionResult> Register([FromBody] RegisterRequestDto paramRegisterRequestDto, [FromServices] EmailService paramEmailService)
         {
-            
-                var user = _mapper.Map<User>(paramRegisterRequestDto);
-                await _service.CreateAsync(user);
+            var user = _mapper.Map<User>(paramRegisterRequestDto);
+            await _service.CreateAsync(user);
+
+            paramEmailService.Send(
+                user.Name,
+                user.Email,
+                "Welcome to Movie Review",
+                "Welcome! Your Password is <strong>123</strong>");
+
                 return Created(nameof(user), user);
-            
-            
         }
 
         [Authorize]
