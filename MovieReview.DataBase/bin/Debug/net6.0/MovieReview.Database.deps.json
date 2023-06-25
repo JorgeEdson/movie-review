@@ -550,10 +550,6 @@
         }
       },
       "MovieReview.Core/1.0.0": {
-        "dependencies": {
-          "Microsoft.Extensions.Identity.Core": "6.0.10",
-          "Microsoft.Extensions.Identity.Stores": "6.0.10"
-        },
         "runtime": {
           "MovieReview.Core.dll": {}
         }
