@@ -13,5 +13,11 @@ The project is organized based on **Onion Architecture** making the Domain centr
 - Uses **AutoMapper** to convert Domain Classes to DTO Classes
 - The pattern **Repository** is implemented to organize operations on the database.
 - In this library are implemented the **Services** that concentrate the business rules and validations
+- Uses cryptography for some data not to be exposed in the database
 
-
+## MovieReview.API (ASP.NET CORE Web API)
+- Authentication using **JWT Bearer** and **ApiKey**
+- Uses **AutoMapper** to convert Domain Classes to DTO Classes
+- endpoint versioning
+- Documentation using Swagger
+- Dependency Injection
