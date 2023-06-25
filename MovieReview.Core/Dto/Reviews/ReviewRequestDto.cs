@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieReview.Core.Dto
+namespace MovieReview.Core.Dto.Reviews
 {
-    public  class ReviewRequestDto
+    public class ReviewRequestDto
     {
         public int Note { get; set; }
         public string Description { get; set; }

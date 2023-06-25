@@ -2,9 +2,9 @@
 using MovieReview.Core.Domain.Entities;
 using MovieReview.Database.Services.Base;
 using MovieReview.Database.Services.Interfaces;
-using MovieReview.Core.Dto;
 using System.Threading.Tasks;
 using System;
+using MovieReview.Core.Dto.Actors;
 
 namespace MovieReview.Database.Services
 {

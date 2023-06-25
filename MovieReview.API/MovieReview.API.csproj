@@ -15,4 +15,8 @@
     <ProjectReference Include="..\MovieReview.Core\MovieReview.Core.csproj" />
     <ProjectReference Include="..\MovieReview.DataBase\MovieReview.Database.csproj" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\Images\" />
+  </ItemGroup>
 </Project>

@@ -2,6 +2,7 @@
 using MovieReview.Core.Domain.Entities;
 using MovieReview.Database.Repositories.Base;
 using MovieReview.Database.Repositories.Interfaces;
+using MovieReviewDataBase;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,6 +13,10 @@ namespace MovieReview.Database.Repositories
 {
     public class UserRepository : BaseRepository<User>, IUserRepository
     {
+        public UserRepository(MovieReviewContext paramContext) : base(paramContext)
+        {
+        }
+
         public async Task<List<User>> GetAllUsersAdmAsync()
         {
             return await _dbSet.Where(u => u.IsAdministrator).ToListAsync();

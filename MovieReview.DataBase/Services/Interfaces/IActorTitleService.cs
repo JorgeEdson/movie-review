@@ -1,5 +1,5 @@
 ﻿using MovieReview.Core.Domain.Entities;
-using MovieReview.Core.Dto;
+using MovieReview.Core.Dto.Actors;
 using MovieReview.Database.Services.Interfaces.Base;
 using System;
 using System.Threading.Tasks;

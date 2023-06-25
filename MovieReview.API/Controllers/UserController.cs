@@ -7,9 +7,12 @@ using System;
 using System.Threading.Tasks;
 using AutoMapper;
 using MovieReview.API.Services;
-using MovieReview.Core.Dto.Request;
-using MovieReview.Core.Dto;
 using MovieReview.API.Attributes;
+using MovieReview.Core.Dto.Titles;
+using MovieReview.Core.Dto.Users;
+using MovieReview.Core.Dto.Actors;
+using MovieReview.Core.Dto.Reviews;
+using MovieReview.Core.Dto.Persons;
 
 namespace MovieReview.API.Controllers
 {
@@ -20,14 +23,14 @@ namespace MovieReview.API.Controllers
         private readonly IMapper _mapper;
         private readonly IUserService _service;
         private readonly TokenService _tokenService;
-        public UserController(IMapper mapper, IUserService reviewService, TokenService tokenService)
+        public UserController(IMapper mapper, IUserService userService, TokenService tokenService)
         {
             _mapper = mapper;
-            _service = reviewService;
+            _service = userService;
             _tokenService = tokenService;
         }
 
-        [HttpPost("Login")]
+        [HttpPost("v1/Login")]
         public async Task<IActionResult> Login([FromBody] LoginRequestDto paramLoginDto)
         {
             try
@@ -47,7 +50,7 @@ namespace MovieReview.API.Controllers
             }
         }
 
-        [HttpPost("Register")]
+        [HttpPost("v1/Register")]
         public async Task<IActionResult> Register([FromBody] RegisterRequestDto paramRegisterRequestDto, [FromServices] EmailService paramEmailService)
         {
             var user = _mapper.Map<User>(paramRegisterRequestDto);
@@ -63,7 +66,7 @@ namespace MovieReview.API.Controllers
         }
 
         [Authorize]
-        [HttpPut("ChangePassword")]
+        [HttpPut("v1/ChangePassword")]
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordRequestDto paramChangePasswordDto)
         {
             try
@@ -81,7 +84,7 @@ namespace MovieReview.API.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPost("CreateOtherAdministrator")]
+        [HttpPost("v1/CreateOtherAdministrator")]
         public async Task<IActionResult> CreateOtherAdministrator([FromBody] RegisterRequestDto paramRegisterRequestDto)
         {
             try
@@ -98,7 +101,7 @@ namespace MovieReview.API.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPost("CreateActor")]
+        [HttpPost("v1/CreateActor")]
         public async Task<IActionResult> CreateActor([FromBody] PersonRequestDto paramPersonDto,
             [FromServices] IActorService paramActorService)
         {
@@ -116,7 +119,7 @@ namespace MovieReview.API.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPost("CreateDirector")]
+        [HttpPost("v1/CreateDirector")]
         public async Task<IActionResult> CreateDirector([FromBody] PersonRequestDto paramPersonDto,
             [FromServices] IDirectorService paramDirectorService)
         {
@@ -134,18 +137,19 @@ namespace MovieReview.API.Controllers
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpPost("CreateTitle")]
+        [HttpPost("v1/CreateTitle")]
         public async Task<IActionResult> CreateTitle([FromBody] TitleRequestDto paramTitleDto,
             [FromServices] ITitleService paramTitleService)
         {
             var whoAddedId = Guid.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             var title = _mapper.Map<Title>(paramTitleDto);
             await paramTitleService.CreateWithWhoAddedAsync(title, whoAddedId);
+            await paramTitleService.SaveTitleImage(paramTitleDto.Base64Image);
             return Created(nameof(title), title);
         }
 
         [Authorize]
-        [HttpPost("CreateActorsInTitle")]
+        [HttpPost("v1/CreateActorsInTitle")]
         public async Task<IActionResult> CreateActorsInTitle([FromBody] ActorsInTitleRequestDto paramActorsInTitleRequestDto,
             [FromServices] IActorTitleService paramActorTitleService)
         {
@@ -162,7 +166,7 @@ namespace MovieReview.API.Controllers
         }
 
         [Authorize]
-        [HttpPost("CreateReview")]
+        [HttpPost("v1/CreateReview")]
         public async Task<IActionResult> CreateReview([FromBody] ReviewRequestDto paramReviewRequestDto,
             [FromServices] IReviewService paramReviewService)
         {
@@ -175,7 +179,7 @@ namespace MovieReview.API.Controllers
         }
 
         [ApiKey]
-        [HttpGet("GetUsersAdm")]
+        [HttpGet("v1/GetUsersAdm")]
         public async Task<IActionResult> GetUsersAdm()
         {
             try

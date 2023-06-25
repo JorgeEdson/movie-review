@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using MovieReview.Core.Domain.Entities;
 using MovieReview.Core.Dto;
-using MovieReview.Core.Dto.Request;
+using MovieReview.Core.Dto.Users;
 
 namespace MovieReview.API.Mappers
 {

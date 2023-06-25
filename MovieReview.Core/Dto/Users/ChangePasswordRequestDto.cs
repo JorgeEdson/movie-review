@@ -4,12 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieReview.Core.Dto.Request
+namespace MovieReview.Core.Dto.Users
 {
-    public class RegisterRequestDto
+    public class ChangePasswordRequestDto
     {
-        public string Name { get; set; }
         public string Email { get; set; }
-        public DateTime BirthDate { get; set; }
+        public string OldPassword { get; set; }
+        public string NewPassword { get; set; }
     }
 }

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using MovieReview.Core.Domain.Entities;
 
 namespace MovieReviewDataBase
@@ -11,22 +12,10 @@ namespace MovieReviewDataBase
         public virtual DbSet<Director> Directors { get; set; }
         public virtual DbSet<Title> Titles { get; set; }
         public virtual DbSet<Review> Reviews { get; set; }
-              
 
-        //public MovieReviewContext()
-        //{
-        //}
 
-        //public MovieReviewContext(DbContextOptions<MovieReviewContext> options) : base(options)
-        //{     
-        //}
-
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public MovieReviewContext(DbContextOptions<MovieReviewContext> paramOptions) : base(paramOptions)
         {
-            optionsBuilder.UseSqlServer(connectionString: "Integrated Security=SSPI;" +
-                                                          "Persist Security Info=False;" +
-                                                          "Initial Catalog=MovieReviewDB;" +
-                                                          "Data Source=ASUSDEV");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

@@ -1,6 +1,5 @@
 ﻿using MovieReview.Core.Domain.Entities;
-using MovieReview.Core.Dto.Request;
-using MovieReview.Core.Dto.Response;
+using MovieReview.Core.Dto.Users;
 using MovieReview.Database.Services.Interfaces.Base;
 using System;
 using System.Collections.Generic;

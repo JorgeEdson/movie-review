@@ -1,11 +1,13 @@
 ﻿using MovieReview.Core.Domain.Base;
 using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace MovieReview.Core.Domain.Entities
 {
     public class Director : Person
     {
+        
         public virtual List<Title>? Titles { get; private set; }
         public Director(string paramName, DateTime paramBirthDate)
         {

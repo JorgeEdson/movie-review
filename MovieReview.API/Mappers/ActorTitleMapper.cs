@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using MovieReview.Core.Domain.Entities;
-using MovieReview.Core.Dto;
+using MovieReview.Core.Dto.Actors;
 
 namespace MovieReview.API.Mappers
 {

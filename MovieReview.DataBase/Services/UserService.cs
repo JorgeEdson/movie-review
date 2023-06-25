@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using MovieReview.Core.Domain.Entities;
-using MovieReview.Core.Dto.Request;
-using MovieReview.Core.Dto.Response;
+using MovieReview.Core.Dto.Users;
 using MovieReview.Database.Repositories.Interfaces;
 using MovieReview.Database.Services.Base;
 using MovieReview.Database.Services.Interfaces;

@@ -12,6 +12,11 @@ using MovieReview.Database.Services;
 using System.Text;
 using MovieReview.API.Mappers;
 using Microsoft.Extensions.Configuration;
+using MovieReviewDataBase;
+using Microsoft.EntityFrameworkCore;
+using System.Text.Json.Serialization;
+using Microsoft.AspNetCore.ResponseCompression;
+using System.IO.Compression;
 
 var builder = WebApplication.CreateBuilder(args);
 ConfigureAuthentication(builder);
@@ -33,6 +38,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.UseStaticFiles();
+app.UseResponseCompression();
 app.Run();
 
 void LoadConfiguration(WebApplication app) 
@@ -67,7 +73,25 @@ void ConfigureAuthentication(WebApplicationBuilder builder)
 
 void ConfigureMvc(WebApplicationBuilder builder)
 {
-    builder.Services.AddControllers();
+    builder.Services.AddMemoryCache();
+    builder.Services.AddResponseCompression(options =>
+    {
+        // options.Providers.Add<BrotliCompressionProvider>();
+        options.Providers.Add<GzipCompressionProvider>();
+        // options.Providers.Add<CustomCompressionProvider>();
+    });
+    builder.Services.Configure<GzipCompressionProviderOptions>(options =>
+    {
+        options.Level = CompressionLevel.Optimal;
+    });
+    builder.Services
+        .AddControllers()
+        .ConfigureApiBehaviorOptions(options => { options.SuppressModelStateInvalidFilter = true; })
+        .AddJsonOptions(x =>
+        {
+            x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles;
+            x.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingDefault;
+        });
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
 }
@@ -79,24 +103,27 @@ void ConfigureMappers(WebApplicationBuilder builder)
 
 void ConfigureServices(WebApplicationBuilder builder)
 {
+    var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+    builder.Services.AddDbContext<MovieReviewContext>(options => options.UseSqlServer(connectionString));    
+
     builder.Services.AddTransient<TokenService>();
     builder.Services.AddTransient<EmailService>();
 
-    builder.Services.AddSingleton<IUserRepository, UserRepository>();
-    builder.Services.AddSingleton<IUserService, UserService>();
+    builder.Services.AddScoped<IUserRepository, UserRepository>();
+    builder.Services.AddScoped<IUserService, UserService>();
 
-    builder.Services.AddSingleton<IActorRepository, ActorRepository>();
-    builder.Services.AddSingleton<IActorService, ActorService>();
+    builder.Services.AddScoped<IActorRepository, ActorRepository>();
+    builder.Services.AddScoped<IActorService, ActorService>();
 
-    builder.Services.AddSingleton<IDirectorRepository, DirectorRepository>();
-    builder.Services.AddSingleton<IDirectorService, DirectorService>();
+    builder.Services.AddScoped<IDirectorRepository, DirectorRepository>();
+    builder.Services.AddScoped<IDirectorService, DirectorService>();
 
-    builder.Services.AddSingleton<ITitleRepository, TitleRepository>();
-    builder.Services.AddSingleton<ITitleService, TitleService>();
+    builder.Services.AddScoped<ITitleRepository, TitleRepository>();
+    builder.Services.AddScoped<ITitleService, TitleService>();
 
-    builder.Services.AddSingleton<IActorTitleRepository, ActorTitleRepository>();
-    builder.Services.AddSingleton<IActorTitleService, ActorTitleService>();
+    builder.Services.AddScoped<IActorTitleRepository, ActorTitleRepository>();
+    builder.Services.AddScoped<IActorTitleService, ActorTitleService>();
 
-    builder.Services.AddSingleton<IReviewRepository, ReviewRepository>();
-    builder.Services.AddSingleton<IReviewService, ReviewService>();
+    builder.Services.AddScoped<IReviewRepository, ReviewRepository>();
+    builder.Services.AddScoped<IReviewService, ReviewService>();
 }

@@ -18,9 +18,9 @@ namespace MovieReview.Database.Repositories.Base
         protected readonly MovieReviewContext _context;
         public DbSet<T> _dbSet{ get; set; }
 
-        public BaseRepository()
+        public BaseRepository(MovieReviewContext paramContext)
         {
-            _context = new MovieReviewContext();
+            _context = paramContext;
             _dbSet = _context.Set<T>();
         }
 

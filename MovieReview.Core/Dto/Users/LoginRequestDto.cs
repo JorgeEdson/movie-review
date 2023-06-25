@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MovieReview.Core.Dto.Request
+namespace MovieReview.Core.Dto.Users
 {
     public class LoginRequestDto
     {

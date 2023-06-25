@@ -10,5 +10,6 @@ namespace MovieReview.Database.Repositories.Interfaces
 {
     public interface ITitleRepository : IBaseRepository<Title>
     {
+        Task<List<Title>> GetPagedAsync(int paramPage, int paramPageSize);
     }
 }

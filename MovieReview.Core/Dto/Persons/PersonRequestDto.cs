@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MovieReview.Core.Dto
+namespace MovieReview.Core.Dto.Persons
 {
     public class PersonRequestDto
     {   
